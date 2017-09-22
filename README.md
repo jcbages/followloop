@@ -11,13 +11,13 @@
 
 ## About
 
-Github followers let you :
+#### Features
 
   - Search the following users of a given users
   - Recurse on this following users to get the following users of them
   - Continue like this until the universe ends :scream:
 
-### Secret sauce
+#### Secret sauce
 
   - Save and load your history session
   - Load other users sessions :speak_no_evil:
