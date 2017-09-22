@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">:grin: Find others, and other, and others, ...</h4>
+<h4 align="center">Find others, and other, and others, ... :grin:</h4>
 
 ## About
 
