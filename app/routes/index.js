@@ -28,12 +28,24 @@ router.get('/followers/:user', function(req, res, next) {
 router.post('/history', function(req, res, next) {
 	MongoClient.connect(url, function(err, db) {
 		if (err) return next(err);
-		db.collection('history').insertOne(req.body, function(err, data) {
+		db.collection('history').insertOne(req.body, function (err, _) {
 			if (err) return next(err);
 			db.close();
 			res.json({});
   	});
 	});
 });
+
+/* GET history */
+router.get('/history', function (req, res, next) {
+	MongoClient.connect(url, function(err, db) {
+	  if (err) return next(err);
+	  db.collection('history').find({}).toArray(function(err, result) {
+	    if (err) throw err;
+	    db.close();
+	    res.json(result);
+	  });
+	});
+})
 
 module.exports = router;
