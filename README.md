@@ -17,7 +17,8 @@ Github followers let you :
   - Recurse on this following users to get the following users of them
   - Continue like this until the universe ends :scream:
 
-Secret sauce:
+### Secret sauce
 
-  - As a plus, you can save your history session publicly and load it or load another user's history session inmediately.
+  - Save and load your history session
+  - Load other users sessions :speak_no_evil:
 
