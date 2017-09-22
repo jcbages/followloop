@@ -25,14 +25,14 @@ export default class FollowersView extends Component {
   render() {
     if (this.props.status === 'READY') {
       return (
-        <div id="followers" className="col-md-5">
+        <div id="followers" className="col-md-4">
           <h2>Followers</h2>
           <ul className="list-group">{this.getItems()}</ul>
         </div>
       );
     } else {
       return (
-        <div id="followers" className="col-md-5">
+        <div id="followers" className="col-md-4">
           <h2>Followers</h2>
           <h5>Loading...</h5>
         </div>

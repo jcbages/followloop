@@ -17,23 +17,23 @@ button {
 	width: 100%;
 }
 
-#followers, #tree {
+#followers, #tree, #history {
 	padding-top: 60px;
 }
 
-#followers h2, #followers h5, #tree h2 {
+#followers h2, #followers h5, #tree h2, #history h2, #history h5 {
 	text-align: center;
 }
 
-#followers h5 {
+#followers h5, #history h5 {
 	padding-top: 90px;
 }
 
-#followers ul, #tree ul {
+#followers ul, #tree ul, #history ul {
 	padding: 25px 0;
 }
 
-#followers li div, #tree li div {
+#followers li div, #tree li div, #history li div {
 	margin: 0;
 	display: inline-block;
 }
@@ -44,24 +44,29 @@ button {
 }
 
 #tree li img {
-	max-width: 90%;
+	margin-top: 8px;
+	max-width: 100%;
 }
 
 #followers li img {
-	max-width: 75%;
+	max-width: 95%;
 }
 
-#followers li .f-text, #tree li .f-text {
-	margin-top: 20px;
+#followers li .f-text {
+	margin-top: 15px;
 }
 
-#followers li span, #tree li span {
+#tree li .f-text, #history li .f-text {
+	margin-top: 6px;
+}
+
+#followers li span, #tree li span, #history li span {
 	cursor: pointer;
 	color: #43C1E0;
 	text-decoration: underline;
 }
 
-#followers li:hover, #tree li span:hover {
+#followers li:hover, #tree li span:hover, #history li:hover {
 	color: #21A0C0;
 }
 

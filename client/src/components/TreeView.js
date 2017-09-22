@@ -10,7 +10,7 @@ export default class TreeView extends Component {
           <img src={item[0].avatar} alt={item[0].name} />
         </div>
 
-        <div className="col-md-7 f-text">
+        <div className="col-md-8 f-text">
           <span onClick={this.props.onClickTree(item[0], index)}>
             @{item[0].name}
           </span>
@@ -31,7 +31,7 @@ export default class TreeView extends Component {
   // render required as always
   render() {
     return (
-      <div id="tree" className="col-md-7">
+      <div id="tree" className="col-md-5">
         <h2>Tree</h2>
         <ul className="list-group">{this.getItems()}</ul>
       </div>

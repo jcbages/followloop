@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SearchView from './components/SearchView';
 import FollowersView from './components/FollowersView';
 import TreeView from './components/TreeView';
+import HistoryView from './components/HistoryView';
 
 export default class App extends Component {
   constructor(props) {
@@ -13,8 +14,10 @@ export default class App extends Component {
       text: '',
       user: null,
       status: 'READY',
+      historyStatus: 'READY',
       followers: [],
-      tree: []
+      tree: [],
+      history: []
     }
 
     // bind functions for jsx
@@ -22,7 +25,20 @@ export default class App extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onClickTree = this.onClickTree.bind(this);
     this.onTextChange = this.onTextChange.bind(this);
+    this.fetchHistory = this.fetchHistory.bind(this);
+    this.onClickHistory = this.onClickHistory.bind(this);    
     this.onClickFollower = this.onClickFollower.bind(this);    
+  }
+
+  componentDidMount() {
+    this.fetchHistory();
+  }
+
+  getValidState(target) {
+    let ans = {};
+    let keys = ['status', 'user', 'text', 'followers', 'tree'];
+    for (let i = 0; i < keys.length; i++) ans[keys[i]] = target[keys[i]];
+    return ans;
   }
 
   fetchFollowers(user) {
@@ -31,20 +47,29 @@ export default class App extends Component {
 
     // fetch followers list
     return fetch(`/followers/${user.name}`)
-    .then(res => res.ok ? res.json() : null)
+    .then(res => res.ok ? res.json() : [])
     .then(res => ({
       status: 'READY',
       user: {name: user.name, avatar: user.avatar},
       text: user.name,
-      followers: res ? res.data.map(user => ({
+      followers: res.data.map(user => ({
         name: user.login,
         avatar: user.avatar_url
-      })) : []
-    }));
+      }))
+    }))
   }
 
   fetchHistory() {
-    // TODO
+    // show loading view
+    this.setState({historyStatus: 'LOADING'});
+
+    // retrieve histories in db
+    fetch('/history')
+    .then(res => res.ok ? res.json() : [])
+    .then(res => this.setState({
+      historyStatus: 'READY',
+      history: res
+    }))
   }
 
   onTextChange(event) {
@@ -54,7 +79,9 @@ export default class App extends Component {
 
   onSave() {
     // save history data
-    let data = JSON.stringify(this.state);
+    let clone = JSON.parse(JSON.stringify(this.state));
+    let data = JSON.stringify(this.getValidState(clone));
+
     let headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -111,6 +138,13 @@ export default class App extends Component {
     }
   }
 
+  onClickHistory(item) {
+    return () => {
+      // load history to state
+      this.setState(this.getValidState(item));
+    }
+  }
+
   // render required as always
   render() {
     return (
@@ -137,6 +171,11 @@ export default class App extends Component {
           <TreeView
             tree={this.state.tree}
             onClickTree={this.onClickTree} />
+
+          <HistoryView
+            history={this.state.history}
+            status={this.state.historyStatus}
+            onClickHistory={this.onClickHistory} />
         </div>
       </div>
     );
