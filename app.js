@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   err = req.app.get('env') === 'development' ? err : {};
-  res.status(err.status || 500).json({message: err.message});
+  res.status(500).json({message: err.message});
 });
 
 module.exports = app;
