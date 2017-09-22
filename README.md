@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="#"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="Github followers"></a>
+  <a href="#"><img width="200" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="Github followers"></a>
   <br>
   Github followers
   <br>
