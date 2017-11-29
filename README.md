@@ -9,6 +9,8 @@
 
 <h4 align="center">Find others, and other, and others, ... :grin:</h4>
 
+<img src="https://raw.githubusercontent.com/jcbages/followloop/master/dumb.png" alt="Preview">
+
 ## About
 
 Followloop is a project that allow yo to traverse the GitHub followers graph in an interactive way. Just type the username you want to start from, and navigate as you want by traversing its followers. This is a recursive process so once you click a follower, you can see its followers and so on...
@@ -45,7 +47,7 @@ Before running, make sure you add your MongoDB URL and GitHub Credentials as env
 ```sh
 export MONGO_URI=<MongoDB URL>
 export G_USR=<GitHub API User>
-exrpot G_PWD=<GitHub API Pwd>
+export G_PWD=<GitHub API Pwd>
 ```
 
 Finally, start the server using npm and go to your browser with address *http://localhost:5000*
