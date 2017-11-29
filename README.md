@@ -43,9 +43,9 @@ $ npm run heroku-postbuild
 Before running, make sure you add your MongoDB URL and GitHub Credentials as environment variables
 
 ```sh
-export MONGO_URI=<MongoDB URL>
-export G_USR=<GitHub API User>
-export G_PWD=<GitHub API Pwd>
+export MONGO_URI=<MongoDB URI>
+export G_USR=<Your GitHub username>
+export G_PWD=<Your GitHub password>
 ```
 
 Finally, start the server using npm and go to your browser with address *http://localhost:5000*
