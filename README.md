@@ -9,9 +9,13 @@
 
 <h4 align="center">Find others, and other, and others, ... :grin:</h4>
 
-<img src="https://raw.githubusercontent.com/jcbages/followloop/master/dumb.png" alt="Preview">
+#### Preview
 
-## About
+<div style="margin: auto;">
+  <img src="https://raw.githubusercontent.com/jcbages/followloop/master/dumb.png" alt="Preview">
+</div>
+
+#### About
 
 Followloop is a project that allow yo to traverse the GitHub followers graph in an interactive way. Just type the username you want to start from, and navigate as you want by traversing its followers. This is a recursive process so once you click a follower, you can see its followers and so on...
 
